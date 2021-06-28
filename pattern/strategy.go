@@ -40,10 +40,10 @@ type Reduction struct {
 }
 
 func (red *Reduction) GetPrice(price float64) float64 {
-	if price < red.Full || price == 0 {
+	if price < red.Full || price == 0 || red.Full == 0 {
 		return price
 	}
-	return price - red.Discount*math.Ceil(red.Full/price)
+	return price - red.Discount*math.Ceil(price/red.Full)
 }
 
 // 仅满减
