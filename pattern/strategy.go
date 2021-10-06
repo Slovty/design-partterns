@@ -59,7 +59,7 @@ func (red *FullReduction) GetPrice(price float64) float64 {
 	return price - red.Discount
 }
 
-// 价格工厂
+// 价格工厂 工厂模式：
 type PriceFactory struct {
 }
 
